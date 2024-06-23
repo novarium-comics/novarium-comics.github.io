@@ -79,6 +79,33 @@ hr {
     border: 3px solid var(--acn1);
 }
 
+.button-group li {
+    list-style: none;
+    background: var(--acn1);
+}
+
+.button-group.row li {
+    margin-bottom: 10px;
+}
+
+.button-group li a {
+    display: block;
+    padding: 10px 30px;
+    color: var(--blk);
+    text-decoration: none;
+}
+
+.button-group ul {
+    display: flex;
+}
+
+.button-group.row ul {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+
 #footer-area,
 #summary {
     width: var(--wdt);
