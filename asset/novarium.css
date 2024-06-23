@@ -70,7 +70,6 @@ hr {
 /* Gallery Styles */
 .gallery ul {
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
     align-content: flex-start;
     justify-content: flex-start;
@@ -79,15 +78,13 @@ hr {
 
 .gallery li {
     list-style: none;
-    padding: 0;
     width: 33.33%;
-    height: 450px;
     overflow: hidden;
 }
 
 .gallery a {
     display: block;
-    height: 100%;
+    position: relative;
 }
 
 .gallery img {
@@ -98,6 +95,42 @@ hr {
 
 .gallery.small li {
     height: 200px;
+}
+
+.gallery .caption {
+    position: absolute;
+    z-index: 10;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: var(--acn1);
+    color: var(--blk);
+    opacity: 0;
+}
+
+.gallery li:hover .caption {
+    opacity: 0.8;
+}
+
+.gallery-thumb {
+    height: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gallery.small .gallery-thumb {
+    height: 200px;
+}
+
+span.cap-title {
+    font-weight: 900;
+    line-height: 1;
 }
 
 /* Header Area */
@@ -129,13 +162,11 @@ hr {
 }
 
     #work-gallery.gallery img {
-        /* width: 100%; */
     }
 
 /* Comic Work */
 #comic-work {
     display: flex;
-    flex-direction: row;
     flex-wrap: nowrap;
     justify-content: flex-start;
     align-items: flex-start;
@@ -194,3 +225,40 @@ h2.section-heading.full-height {
     width: 900px;
     margin: 0 auto;
 }
+
+/* Footer Area */
+#footer-area {
+    width: 900px;
+    margin: 0 auto;
+    padding: 20px 20px 50px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    font-size: 0.75em;
+    line-height: 1.5;
+    border-top: 3px solid var(--gry2);
+    color: var(--gry2);
+}
+
+    #footer-area > div {
+        width: 50%;
+    }
+
+    #footer-area > .left {
+        text-align: left;
+    }
+
+    #footer-area > .right {
+        text-align: right;
+    }
+
+ul#medsos-list {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+    ul#medsos-list li {
+        list-style: none;
+        margin-right: 10px;
+    }
