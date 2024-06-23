@@ -82,7 +82,34 @@ p:not(:last-child) {
 }
 
 .gallery img {
-    max-width: 300px;
+    max-width: 100%;
+}
+
+#head-area {
+    background: var(--acn1);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+#head-area h1 {
+    color: var(--wht);
+}
+
+#main-area {
+    width: 600px;
+    margin: 0 auto;
+}
+
+.home-section {
+    padding-right: 150px;
+}
+
+#work-gallery {
+    margin-right: -150px;
 }
 
 #comic-work {
