@@ -1,5 +1,23 @@
+:root {
+    --acn1: #ffa200;
+    --acn2: #a54c0c;
+    --acn3: #facc07;
+    --wht: #f3ede7;
+    --blk: 060513;
+    --gry1: #d1ccc9;
+    --gry2: #a4a0a0;
+    --gry3: #827f82;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+body {
+    background: var(--wht);
+    color: var(--gry3);
+    font-size: 11pt;
+    line-height: 1.5;
 }
