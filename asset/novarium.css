@@ -84,3 +84,35 @@ p:not(:last-child) {
 .gallery img {
     max-width: 300px;
 }
+
+#comic-work {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+#comic-work > div {
+    padding: 20px;
+}
+
+#comic-thumb {
+    width: 30%;
+}
+
+    #comic-thumb img {
+        width: 100%;
+    }
+
+#comic-summary {
+    width: 70%;
+}
+
+h1#comic-title {
+    margin-top: 0;
+}
+
+#comic-author li {
+    list-style: none;
+}
