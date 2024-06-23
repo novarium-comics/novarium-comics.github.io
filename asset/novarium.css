@@ -57,3 +57,25 @@ h3, h4 {
 h5, h6, h7 {
     font-size: 1.2em;
 }
+
+.gallery ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.gallery li {
+    list-style: none;
+    padding: 10px;
+}
+
+.gallery a {
+    display: block;
+}
+
+.gallery img {
+    max-width: 300px;
+}
