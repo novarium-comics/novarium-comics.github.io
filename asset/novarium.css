@@ -3,7 +3,7 @@
     --acn2: #a54c0c;
     --acn3: #facc07;
     --wht: #f3ede7;
-    --blk: 060513;
+    --blk: #060513;
     --gry1: #d1ccc9;
     --gry2: #a4a0a0;
     --gry3: #827f82;
@@ -21,8 +21,8 @@ body {
     font-family: "Lato", sans-serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 11pt;
-    line-height: 1.5;
+    font-size: 14pt;
+    line-height: 2em;
 }
 
 h1, h2, h3, h4, h5, h6, h7 {
@@ -63,56 +63,76 @@ p:not(:last-child) {
     margin-bottom: 1em;
 }
 
+hr {
+    border: 3px solid var(--acn1);
+}
+
+/* Gallery Styles */
 .gallery ul {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-content: flex-start;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: flex-end;
 }
 
 .gallery li {
     list-style: none;
-    padding: 10px 0;
-    width: 33.33333333333%;
+    padding: 0;
+    width: 33.33%;
+    height: 450px;
+    overflow: hidden;
 }
 
 .gallery a {
     display: block;
+    height: 100%;
 }
 
 .gallery img {
-    max-width: 100%;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
 }
 
+.gallery.small li {
+    height: 200px;
+}
+
+/* Header Area */
 #head-area {
     background: var(--acn1);
     height: 100vh;
     display: flex;
     flex-direction: column;
-    flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
 }
 
-#head-area h1 {
-    color: var(--wht);
-}
+    #head-area h1 {
+        color: var(--wht);
+    }
 
+/* Main Area */
 #main-area {
-    width: 600px;
-    margin: 0 auto;
 }
 
+/* Home Section */
 .home-section {
-    padding-right: 150px;
 }
 
+/* Work Gallery */
 #work-gallery {
-    margin-right: -150px;
+    margin-right: -300px;
+    margin-top: 50px;
 }
 
+    #work-gallery.gallery img {
+        /* width: 100%; */
+    }
+
+/* Comic Work */
 #comic-work {
     display: flex;
     flex-direction: row;
@@ -121,9 +141,9 @@ p:not(:last-child) {
     align-items: flex-start;
 }
 
-#comic-work > div {
-    padding: 20px;
-}
+    #comic-work > div {
+        padding: 20px;
+    }
 
 #comic-thumb {
     width: 30%;
@@ -143,4 +163,34 @@ h1#comic-title {
 
 #comic-author li {
     list-style: none;
+}
+
+/* Section Container */
+.section-container {
+    width: 900px;
+    margin: 100px auto;
+}
+
+.section-container-handler {
+    padding: 20px 300px 20px 20px;
+}
+
+/* Full Height Section */
+.full-height {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h2.section-heading.full-height {
+    background: var(--acn1);
+    color: var(--blk);
+}
+
+/* Summary */
+#summary {
+    width: 900px;
+    margin: 0 auto;
 }
