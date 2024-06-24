@@ -511,3 +511,20 @@ h2.section-heading.full-height::before {
         min-width: 320px;
     }
 }
+
+.button-group.col ul {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#comic-navigation {
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 3px solid var(--acn1);
+}
+
+.button-group.col li {
+    flex-grow: 1;
+}
