@@ -528,3 +528,7 @@ h2.section-heading.full-height::before {
 .button-group.col li {
     flex-grow: 1;
 }
+
+    .button-group.col li:not(:last-child) {
+        margin-right: 20px;
+    }
