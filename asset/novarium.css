@@ -477,6 +477,28 @@ h2.section-heading.full-height::before {
     background: var(--gry1);
 }
 
+.button-group.col ul {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#comic-navigation {
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 3px solid var(--acn1);
+}
+
+.button-group.col li {
+    flex-grow: 1;
+}
+
+    .button-group.col li:not(:last-child) {
+        margin-right: 20px;
+    }
+
+
 @media (min-width: 640px) and (max-width: 960px) {
     :root {
         --wdt: 600px;
@@ -512,6 +534,15 @@ h2.section-heading.full-height::before {
         margin-right: 0;
     }
 
+    #comic-work {
+        flex-direction: column;
+    }
+
+    #comic-work > div {
+        flex-grow: 1;
+        width: 100%;
+    }
+
     .section-container-handler {
         padding: 20px;
     }
@@ -526,24 +557,3 @@ h2.section-heading.full-height::before {
         min-width: 320px;
     }
 }
-
-.button-group.col ul {
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    align-items: center;
-}
-
-#comic-navigation {
-    margin-top: 50px;
-    padding-top: 20px;
-    border-top: 3px solid var(--acn1);
-}
-
-.button-group.col li {
-    flex-grow: 1;
-}
-
-    .button-group.col li:not(:last-child) {
-        margin-right: 20px;
-    }
