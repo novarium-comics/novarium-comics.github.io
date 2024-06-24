@@ -22,17 +22,17 @@
     }
 
 body {
-    background: var(--wht);
+    background-color: var(--wht);
     color: var(--blk);
     font-family: Lato, sans-serif;
     font-weight: 400;
     font-size: 13pt;
     line-height: 2em;
     position: relative;
-    background: url(https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg2vN06a1LJ5F9yX3sPR2xjcirGVAQeSsP2l3qi1SfnTyNF7G-S8B-4FzNXtepVHS2-PPzyltPbd8j5FywKdLLdh4NwQnIVLeugavgauXxyTgrBgQ-6Ac2DhgiSqukjj8r81jVbTTuIwRfM-uIUhFkMTw9GzvGc8h9UAys1UR4_K2p9IOcK1tPgpN73hP_G/s800/bar2.png);
+    background-image: url(https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg2vN06a1LJ5F9yX3sPR2xjcirGVAQeSsP2l3qi1SfnTyNF7G-S8B-4FzNXtepVHS2-PPzyltPbd8j5FywKdLLdh4NwQnIVLeugavgauXxyTgrBgQ-6Ac2DhgiSqukjj8r81jVbTTuIwRfM-uIUhFkMTw9GzvGc8h9UAys1UR4_K2p9IOcK1tPgpN73hP_G/s800/bar2.png);
     background-repeat: repeat-x;
     background-size: auto;
-    background-position: left calc(100% - 100px);
+    background-position: left calc(100% - 99px);
 }
 
 h1,
