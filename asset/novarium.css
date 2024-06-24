@@ -303,16 +303,17 @@ span.cap-title {
 }
 
 #head-area {
-    background: var(--acn1);
+    background-color: var(--acn1);
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     position: relative;
-    background: url(https://novarium-comics.carrd.co/assets/images/container01.jpg?v=3f301db6);
+    background-image: url(https://novarium-comics.carrd.co/assets/images/container01.jpg?v=3f301db6);
     background-size: cover;
     background-attachment: fixed;
+    background-position: left bottom;
 }
 
     #head-area h1 {
@@ -382,21 +383,21 @@ h2.section-heading.full-height {
     background: url(https://novarium-comics.carrd.co/assets/images/container04.jpg?v=3f301db6);
     background-size: cover;
     background-attachment: fixed;
-    background-position: center;
+    background-position: left bottom;
 }
 
 #head-area::after,
 .section-heading.full-height::after {
     content: "";
     position: absolute;
-    bottom: 0;
+    bottom: -1px;
     left: 0;
-    background: url(https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhuNylCz5e65rPQIwMzOJ2f1uaeyXxlMPmQ_TsRf4X12fbYmqN14vgmDVBn94f_ifLxnZ8R2GnZ4KGoE6vK5eR1orrBacNZOlonjw0GndE7arNYxaIcH5cclcsNpu1dUCCiJcE0bGYuwuj3PPByr3iFBRlF0ySqH7ldBhpxV254zl5k2UySdm_NDfw4dHrJ/s1920/bar.png);
+    background: url(https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhuNylCz5e65rPQIwMzOJ2f1uaeyXxlMPmQ_TsRf4X12fbYmqN14vgmDVBn94f_ifLxnZ8R2GnZ4KGoE6vK5eR1orrBacNZOlonjw0GndE7arNYxaIcH5cclcsNpu1dUCCiJcE0bGYuwuj3PPByr3iFBRlF0ySqH7ldBhpxV254zl5k2UySdm_NDfw4dHrJ/s1600/bar.png);
     z-index: 99;
     width: 100%;
     height: 200px;
     background-position: left bottom;
-    background-size: contain;
+    background-size: cover;
     overflow: hidden;
     background-repeat: repeat-x;
 }
@@ -404,14 +405,14 @@ h2.section-heading.full-height {
 h2.section-heading.full-height::before {
     content: "";
     position: absolute;
-    top: 0;
+    top: -1px;
     left: 0;
-    background: url(https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi6qSEfjF978osoq5xojgbZ57mk24BPKctekAohs_yyK1uUojPSxtwV-nrZBzf7KRQZpenP5-rKQ_JEx_WfWnXXKzAscozg6aCg1c8Di083AubvCpFg4VWQ1aXDCSRGO3quhIaaahqsPAFLa74o5QSQwQoVqhFT3wblhSladCYNbByqtNUosQyNG4BVf7eo/s1920/bar-r.png);
+    background: url(https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi6qSEfjF978osoq5xojgbZ57mk24BPKctekAohs_yyK1uUojPSxtwV-nrZBzf7KRQZpenP5-rKQ_JEx_WfWnXXKzAscozg6aCg1c8Di083AubvCpFg4VWQ1aXDCSRGO3quhIaaahqsPAFLa74o5QSQwQoVqhFT3wblhSladCYNbByqtNUosQyNG4BVf7eo/s1600/bar-r.png);
     z-index: 99;
     width: 100%;
     height: 200px;
     background-position: right top;
-    background-size: contain;
+    background-size: cover;
     overflow: hidden;
     background-repeat: repeat-x;
 }
@@ -483,7 +484,11 @@ h2.section-heading.full-height::before {
     }
 
     body {
-        font-size: 12pt;
+        font-size: 11pt;
+    }
+
+    .gallery li {
+        width: 100%;
     }
 
     #work-gallery {
@@ -498,5 +503,9 @@ h2.section-heading.full-height::before {
     #nav-menu ul,
     .button-group ul {
         flex-direction: column;
+    }
+
+    #nav-container, #footer-container, #summary, #non-home #main-area, .section-container {
+        min-width: 320px;
     }
 }
