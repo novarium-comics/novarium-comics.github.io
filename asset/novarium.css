@@ -153,6 +153,12 @@ hr {
   color: var(--blk);
   text-decoration: none;
 }
+.button-group ul li:hover {
+  background-color: var(--acn2);
+}
+.button-group ul li:hover a {
+  color: var(--wht);
+}
 .button-group.row ul {
   flex-direction: column;
   flex-wrap: nowrap;
