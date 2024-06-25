@@ -345,6 +345,12 @@ h2#site-title {
 
 .burger-menu {
     display: none;
+    &::before {
+        content: "Menu";
+    }
+    input:checked + &::before {
+        content: "Tutup";
+    }
 }
 
 #nav-menu {
