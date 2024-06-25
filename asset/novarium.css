@@ -532,6 +532,7 @@ ul#medsos-list li {
   #comic-work > div {
     flex-grow: 1;
     width: 100%;
+    padding: 20px;
   }
   .section-container-handler {
     padding: 20px;
