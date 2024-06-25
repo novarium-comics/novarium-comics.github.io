@@ -172,10 +172,17 @@ hr {
   background: var(--acn1);
 }
 .button-group ul li a {
-  display: block;
   padding: 10px 30px;
   color: var(--blk);
-  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: flex-start;
+}
+.button-group ul li a img {
+  width: 1.2em;
+  margin-right: 1em;
 }
 .button-group ul li:hover {
   background-color: var(--acn2);

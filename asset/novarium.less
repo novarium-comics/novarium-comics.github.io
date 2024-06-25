@@ -174,10 +174,17 @@ hr {
         li {
             background: var(--acn1);
             a {
-                display: block;
                 padding: 10px 30px;
                 color: var(--blk);
-                text-decoration: none;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                align-items: center;
+                justify-content: flex-start;
+                img {
+                    width: 1.2em;
+                    margin-right: 1em;
+                }
             }
             &:hover {
                 background-color: var(--acn2);
