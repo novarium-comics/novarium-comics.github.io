@@ -72,7 +72,7 @@ body {
 body#non-home::before {
   content: "";
   position: absolute;
-  top: -40px;
+  top: -41px;
   left: 0;
   right: 0;
   width: 100%;
@@ -551,6 +551,21 @@ ul#medsos-list li {
   }
   .burger-menu {
     display: block;
+  }
+  #nav-menu ul {
+    position: fixed;
+    background: var(--acn1);
+    width: 100%;
+    left: 0;
+    right: 0;
+    top: 55px;
+    height: 0;
+    overflow: hidden;
+    padding: 0;
+  }
+  #nav-menu input:checked + label + ul {
+    padding: 10px;
+    height: auto;
   }
   #work-gallery {
     margin-right: 0;
