@@ -140,6 +140,30 @@ p:last-child {
 hr {
   border: 3px solid var(--acn1);
 }
+.visually-hidden,
+.screen-reader,
+.sr {
+  position: absolute !important;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px 0 0;
+  padding: 0;
+  border: 0;
+}
+.cf:before,
+.cf:after {
+  content: "";
+  display: table;
+}
+.cf:after {
+  clear: both;
+}
+.cf {
+  zoom: 1;
+}
 /*====BUTTON GROUP====*/
 .button-group ul {
   display: flex;
@@ -197,7 +221,6 @@ hr {
   padding: 5px 10px;
   margin-bottom: 10px;
 }
-/*====GALLERY====*/
 .gallery ul {
   flex-wrap: wrap;
   justify-content: flex-start;
@@ -298,6 +321,9 @@ h2#site-title a {
   justify-content: space-between;
   align-items: center;
   padding: 15px 0;
+}
+.burger-menu {
+  display: none;
 }
 #nav-menu ul {
   display: flex;
@@ -522,6 +548,9 @@ ul#medsos-list li {
   }
   .gallery li {
     width: 100%;
+  }
+  .burger-menu {
+    display: block;
   }
   #work-gallery {
     margin-right: 0;
