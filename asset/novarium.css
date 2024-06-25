@@ -199,7 +199,7 @@ h2#site-title {
     color: var(--gry3);
     position: relative;
     margin-top: 200px;
-    flex-direction: column;
+    flex-direction: row;
 }
 
 #footer-area > div {
@@ -215,7 +215,7 @@ h2#site-title {
 
 ul#medsos-list {
     display: flex;
-    justify-content: flex-start;
+    justify-content: flex-end;
     align-items: flex-start;
 }
 
@@ -320,6 +320,7 @@ span.cap-title {
 
 #head-area {
     background-color: var(--acn1);
+    height: 100vh;
     height: 100lvh;
     display: flex;
     flex-direction: column;
@@ -387,6 +388,7 @@ h1#comic-title {
 }
 
 .full-height {
+    min-height: 100vh;
     min-height: 100lvh;
     display: flex;
     flex-direction: column;
@@ -556,5 +558,13 @@ h2.section-heading.full-height::before {
 
     #nav-container, #footer-container, #summary, #non-home #main-area, .section-container {
         min-width: 320px;
+    }
+
+    #footer-container {
+        flex-direction: column;
+    }
+
+    ul#medsos-list {
+        justify-content: flex-start;
     }
 }
