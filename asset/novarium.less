@@ -606,6 +606,17 @@ ul#medsos-list {
         width: 100%;
     }
 
+    .button-group.col ul {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: stretch;
+        li:not(:last-child) {
+            margin-right: 0;
+            margin-bottom: 10px;
+        }
+    }
+
     .burger-menu {
         display: block;
     }
