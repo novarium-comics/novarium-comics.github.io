@@ -336,7 +336,7 @@ h2#site-title a {
   background-size: cover;
   overflow: hidden;
   background-repeat: repeat-x;
-  height: 180px;
+  height: max(180px, calc((180 / 1243) * 100vw));
 }
 #head-area h1 {
   color: var(--wht);
@@ -367,7 +367,7 @@ h2.section-heading.full-height::after {
   background-size: cover;
   overflow: hidden;
   background-repeat: repeat-x;
-  height: 180px;
+  height: max(180px, calc((180 / 1243) * 100vw));
 }
 h2.section-heading.full-height::after {
   bottom: -1px;
