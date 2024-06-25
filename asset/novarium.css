@@ -587,7 +587,6 @@ ul#medsos-list li {
   .section-container-handler {
     padding: 20px;
   }
-  #nav-container,
   #nav-menu ul,
   .button-group ul {
     flex-direction: column;
