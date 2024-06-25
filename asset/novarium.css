@@ -495,7 +495,7 @@ h1#comic-title {
   padding: 20px 20px 50px;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   font-size: 0.75em;
   line-height: 1.5;
   min-height: 100px;
@@ -531,6 +531,14 @@ ul#medsos-list {
 ul#medsos-list li {
   list-style: none;
   margin-right: 10px;
+  width: 2em;
+  aspect-ratio: 1;
+}
+ul#medsos-list li a {
+  display: block;
+}
+ul#medsos-list li a img {
+  width: 100%;
 }
 @media (min-width: 640px) and (max-width: 960px) {
   :root {
