@@ -41,7 +41,7 @@
 			</div>
 		</div>
 	</nav>
-	<section id="main-area">
+	<section itemscope itemtype="https://schema.org/Book" id="main-area">
 		<script type="application/ld+json">
 			{
 				  "@context": "https://schema.org",
@@ -56,18 +56,14 @@
 						  "inLanguage": "Indonesian",
 						  "name": "NOT/AVAILABLE",
 						  "numberOfPages": "160",
+						  "isFamilyFriendly": "true",
 						  "offers": {
 							"@type": "Offer",
 							"availability": "https://schema.org/SoldOut",
 							"price": "130.000",
 							"priceCurrency": "IDR"
 						  },
-						  "publisher": "Novarium Comics",
-						  "aggregateRating": {
-							"@type": "AggregateRating",
-							"ratingValue": "5",
-							"reviewCount": "601"
-						  }
+						  "publisher": "Novarium Comics"
 						}
 				}
 			</script>
@@ -75,12 +71,13 @@
 			<iframe src="https://www.youtube.com/embed/o6-syf3lI-c?si=m7rDjuLor04qJ6WY&amp;controls=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 		</div>
 		<div id="comic-description">
-			<h1 id="comic-title">NOT/AVAILABLE</h1>
+			<h1 itemprop="name" id="comic-title">NOT/AVAILABLE</h1>
 			<p>
-				<span class="comic-year">2024</span>
+				<span itemprop="copyrightYear" class="comic-year">2024</span>
 				<span class="comic-type">Oneshot</span>
-				<span class="comic-page">168 pages</span>
-				<span class="comic-rating">15+</span>
+				<span class="comic-page"><span itemprop="numberOfPages">160</span> pages</span>
+				<span class="comic-rating"><meta itemprop="isFamilyFriendly" content="true"/>15+</span>
+				<span class="comic-lang"><meta itemprop="inLanguage" content="id"/>Indonesian</span>
 			</p>
 		</div>
 		<div id="comic-work">
@@ -89,27 +86,27 @@
 					<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh1V5gEUGCae6wN8To3dipBgUD-r_W7WCjphsBY7oQA-Jpxc3mKNJI90_a7ybamOIeQl2J9V_HyeMEZWJTDjD292Gg2JHUb4gumDNVAqvzy0079i3mfTYK_VboRbQ4NAJSCLgNttYKdU7zVnMoajNMO3DNuDQWN7TNau_vfRQPf3C98DHPWvUbX-DY9QPi8/s600/NA.jpg" />
 				</div>
 				<ul id="comic-tag">
-					<li>Cosmic Horror</li>
-					<li>Cosmic</li>
-					<li>Night</li>
-					<li>Existential</li>
+					<li itemprop="genre">Cosmic Horror</li>
+					<li itemprop="genre">Cosmic</li>
+					<li itemprop="genre">Night</li>
+					<li itemprop="genre">Existential</li>
 				</ul>
 			</div>
 			<div id="comic-summary" class="right">
-				<div id="comic-synopsis">
+				<div itemprop="description" id="comic-synopsis">
 					<p>Ignorance is a thin veil that protects us from the vastness of the universe.</p>
 					<p>The endlessness of the universe is not something we can comprehend; it exists for us to ignore because our existence is too fragile for it. However, how powerless we would be if the universe decided to lift that thin veil and bring its boundlessness before our fragile dot of existence.</p>
 				</div>
 				<div id="comic-author">
 					<h3>Authors</h3>
-					<ul>
-						<li>BWusagi</li>
-						<li>M.E.A.W</li>
-						<li>Crabocalypse</li>
-						<li>Baktiabe</li>
-						<li>Hadiyas Hanafi</li>
-						<li>Budkalon</li>
-						<li>Benish0ga</li>
+					<ul itemprop="copyrightHolder" itemtype="https://schema.org/Person" itemscope="">
+						<li itemprop="name">BWusagi</li>
+						<li itemprop="name">M.E.A.W</li>
+						<li itemprop="name">Crabocalypse</li>
+						<li itemprop="name">Baktiabe</li>
+						<li itemprop="name">Hadiyas Hanafi</li>
+						<li itemprop="name">Budkalon</li>
+						<li itemprop="name">Benish0ga</li>
 					</ul>
 				</div>
 				<div id="comic-preview">
