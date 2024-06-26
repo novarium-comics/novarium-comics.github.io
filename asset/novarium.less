@@ -138,6 +138,17 @@ p {
     }
 }
 
+span {
+    .acn1 {color: var(--acn1);}
+    .acn2 {color: var(--acn2);}
+    .acn3 {color: var(--acn3);}
+    .gry1 {color: var(--gry1);}
+    .gry2 {color: var(--gry2);}
+    .gry3 {color: var(--gry3);}
+    .wht {color: var(--wht);}
+    .blk {color: var(--blk);}
+}
+
 hr {
     border: 1px solid var(--gry1);
     margin: 20px 0;
@@ -269,6 +280,9 @@ hr {
             overflow: hidden;
             position: relative;
             padding: 3px;
+            &, .gallery-thumb {
+                aspect-ratio: 2/3;
+            }
             a {
                 display: block;
             }
@@ -282,6 +296,7 @@ hr {
                     height: 100%;
                     width: 100%;
                     object-fit: cover;
+                    transition: all 0.25s;
                 }
             }
             .caption {
@@ -307,13 +322,17 @@ hr {
                     display: none;
                 }
             }
-            &:hover .caption {
-                opacity: 0.8;
+            &:hover {
+                .caption {
+                    opacity: 0.8;
+                }
+                .gallery-thumb img {
+                    width: 120%;
+                    height: 120%;
+                    transform: translate(0, -5%);
+                }
             }
         }
-    }
-    &.small li {
-        height: 200px;
     }
     &.a-paper {
         ul li {
@@ -332,6 +351,19 @@ hr {
         ul li {
             &, .gallery-thumb {
                 aspect-ratio: 1;
+            }
+        }
+    }
+    &.hd {
+        ul li {
+            &, .gallery-thumb {
+                aspect-ratio: 9/16;
+            }
+            &.landscape {
+                width: 100%;
+                &, .gallery-thumb {
+                    aspect-ratio: 16/9;
+                }
             }
         }
     }
@@ -452,7 +484,7 @@ h2#site-title {
     }
     h1 {
         color: transparent;
-        padding: 30px 50px;
+        padding: 80px;
         line-height: 1.2em;
         background-image: url(https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhgGyuM9INq74J299Pi68R_3TQSD8uMcAm9K2bRGL3t_EuzgLxAHK3gpmJn_-yc7WJTnOGbk0GwFWYfky9O9bSNEzoSMh6Rl_SCO37ozRMMU3TIGKN59Nxo3CuGW0F-cFFsf6q1fsmpv4BwOYv0XdwSeiAE8lXqh4Yo7b_Aw4UtnaAW8nvC-OUCRuwOg59H/s800/LOGO_PUTIH.png);
         background-size: contain;
@@ -485,19 +517,28 @@ h2.section-heading.full-height {
         background-size: cover;
         overflow: hidden;
         background-repeat: repeat-x;
+        transition: all 0.25s;
         height: ~"max(180px, calc((180 / 1243) * 100vw))";
     }
     &::after {
         bottom: -1px;
         left: 0;
         background-image: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhuNylCz5e65rPQIwMzOJ2f1uaeyXxlMPmQ_TsRf4X12fbYmqN14vgmDVBn94f_ifLxnZ8R2GnZ4KGoE6vK5eR1orrBacNZOlonjw0GndE7arNYxaIcH5cclcsNpu1dUCCiJcE0bGYuwuj3PPByr3iFBRlF0ySqH7ldBhpxV254zl5k2UySdm_NDfw4dHrJ/s1920/bar.png');
-        background-position: left bottom;
+        background-position: -100px bottom;
     }
     &::before {
         top: -1px;
         left: 0;
         background-image: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi6qSEfjF978osoq5xojgbZ57mk24BPKctekAohs_yyK1uUojPSxtwV-nrZBzf7KRQZpenP5-rKQ_JEx_WfWnXXKzAscozg6aCg1c8Di083AubvCpFg4VWQ1aXDCSRGO3quhIaaahqsPAFLa74o5QSQwQoVqhFT3wblhSladCYNbByqtNUosQyNG4BVf7eo/s1920/bar-r.png');
-        background-position: right top;
+        background-position: 100px top;
+    }
+    &:hover {
+        &::after {
+            background-position: left bottom;
+        }
+        &::before {
+            background-position: right top;
+        }
     }
 }
 

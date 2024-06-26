@@ -137,6 +137,30 @@ p {
 p:last-child {
   margin-bottom: 0;
 }
+span .acn1 {
+  color: var(--acn1);
+}
+span .acn2 {
+  color: var(--acn2);
+}
+span .acn3 {
+  color: var(--acn3);
+}
+span .gry1 {
+  color: var(--gry1);
+}
+span .gry2 {
+  color: var(--gry2);
+}
+span .gry3 {
+  color: var(--gry3);
+}
+span .wht {
+  color: var(--wht);
+}
+span .blk {
+  color: var(--blk);
+}
 hr {
   border: 1px solid var(--gry1);
   margin: 20px 0;
@@ -258,6 +282,10 @@ hr.thick {
   position: relative;
   padding: 3px;
 }
+.gallery ul li,
+.gallery ul li .gallery-thumb {
+  aspect-ratio: 2/3;
+}
 .gallery ul li a {
   display: block;
 }
@@ -272,6 +300,7 @@ hr.thick {
   height: 100%;
   width: 100%;
   object-fit: cover;
+  transition: all 0.25s;
 }
 .gallery ul li .caption {
   position: absolute;
@@ -299,8 +328,10 @@ hr.thick {
 .gallery ul li:hover .caption {
   opacity: 0.8;
 }
-.gallery.small li {
-  height: 200px;
+.gallery ul li:hover .gallery-thumb img {
+  width: 120%;
+  height: 120%;
+  transform: translate(0, -5%);
 }
 .gallery.a-paper ul li,
 .gallery.a-paper ul li .gallery-thumb {
@@ -316,6 +347,17 @@ hr.thick {
 .gallery.square ul li,
 .gallery.square ul li .gallery-thumb {
   aspect-ratio: 1;
+}
+.gallery.hd ul li,
+.gallery.hd ul li .gallery-thumb {
+  aspect-ratio: 9/16;
+}
+.gallery.hd ul li.landscape {
+  width: 100%;
+}
+.gallery.hd ul li.landscape,
+.gallery.hd ul li.landscape .gallery-thumb {
+  aspect-ratio: 16/9;
 }
 /*====FULL HEIGHT====*/
 .full-height {
@@ -425,7 +467,7 @@ input:checked + .burger-menu::before {
 }
 #head-area h1 {
   color: transparent;
-  padding: 30px 50px;
+  padding: 80px;
   line-height: 1.2em;
   background-image: url(https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhgGyuM9INq74J299Pi68R_3TQSD8uMcAm9K2bRGL3t_EuzgLxAHK3gpmJn_-yc7WJTnOGbk0GwFWYfky9O9bSNEzoSMh6Rl_SCO37ozRMMU3TIGKN59Nxo3CuGW0F-cFFsf6q1fsmpv4BwOYv0XdwSeiAE8lXqh4Yo7b_Aw4UtnaAW8nvC-OUCRuwOg59H/s800/LOGO_PUTIH.png);
   background-size: contain;
@@ -457,18 +499,25 @@ h2.section-heading.full-height::after {
   background-size: cover;
   overflow: hidden;
   background-repeat: repeat-x;
+  transition: all 0.25s;
   height: max(180px, calc((180 / 1243) * 100vw));
 }
 h2.section-heading.full-height::after {
   bottom: -1px;
   left: 0;
   background-image: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhuNylCz5e65rPQIwMzOJ2f1uaeyXxlMPmQ_TsRf4X12fbYmqN14vgmDVBn94f_ifLxnZ8R2GnZ4KGoE6vK5eR1orrBacNZOlonjw0GndE7arNYxaIcH5cclcsNpu1dUCCiJcE0bGYuwuj3PPByr3iFBRlF0ySqH7ldBhpxV254zl5k2UySdm_NDfw4dHrJ/s1920/bar.png');
-  background-position: left bottom;
+  background-position: -100px bottom;
 }
 h2.section-heading.full-height::before {
   top: -1px;
   left: 0;
   background-image: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi6qSEfjF978osoq5xojgbZ57mk24BPKctekAohs_yyK1uUojPSxtwV-nrZBzf7KRQZpenP5-rKQ_JEx_WfWnXXKzAscozg6aCg1c8Di083AubvCpFg4VWQ1aXDCSRGO3quhIaaahqsPAFLa74o5QSQwQoVqhFT3wblhSladCYNbByqtNUosQyNG4BVf7eo/s1920/bar-r.png');
+  background-position: 100px top;
+}
+h2.section-heading.full-height:hover::after {
+  background-position: left bottom;
+}
+h2.section-heading.full-height:hover::before {
   background-position: right top;
 }
 #non-home #main-area,
