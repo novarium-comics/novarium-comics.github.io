@@ -451,15 +451,15 @@ h2.section-heading.full-height::before {
   background: var(--acn1);
   margin-bottom: 50px;
 }
-#comic-description span {
+#comic-description p > span {
   font-size: 0.9em;
   color: var(--acn2);
 }
-#comic-description span::after {
+#comic-description p > span::after {
   content: "|";
   margin: 10px;
 }
-#comic-description span:last-child::after {
+#comic-description p > span:last-child::after {
   content: "";
 }
 #comic-work {
@@ -553,6 +553,9 @@ ul#medsos-list li a img {
   }
   body {
     font-size: 11pt;
+  }
+  .gallery ul li {
+    width: 50%;
   }
   #work-gallery {
     margin-right: 0;
