@@ -139,7 +139,14 @@ p {
 }
 
 hr {
-    border: 3px solid var(--acn1);
+    border: 1px solid var(--gry1);
+    margin: 20px 0;
+    &.acn {
+        border-color: var(--acn1);
+    }
+    &.thick {
+        border-width: 3px;
+    }
 }
 
 .visually-hidden, .screen-reader, .sr {
@@ -184,10 +191,13 @@ hr {
                 flex-direction: row;
                 flex-wrap: nowrap;
                 align-items: center;
-                justify-content: flex-start;
+                justify-content: space-between;
                 &[data-disabled="true"] {
                     color: var(--gry3);
                     cursor: not-allowed;
+                }
+                > span {
+                    padding: 0 10px;
                 }
                 img {
                     width: 1.2em;
@@ -669,7 +679,10 @@ ul#medsos-list {
     }
 
     body {
-        font-size: 11pt;
+        font-size: 10pt;
+        &#non-home::before {
+            top: -43px;
+        }
     }
 
     .gallery ul li {
