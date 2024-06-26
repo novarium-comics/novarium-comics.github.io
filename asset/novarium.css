@@ -83,6 +83,14 @@ body#non-home::before {
   background-size: cover;
   background-position: top right;
 }
+body#error-page {
+  background-color: var(--blk);
+  color: var(--gry2);
+  background-image: url(https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhuaYdBsbgkgmnWdUBwPwTlHCGEYWKqbGGHTZXG11NkcyVuX8DPfUyw4_CTzTgBK0bNWDY5bQXErjrMAI4UjqP0QsxC5Tsbl0nSnValGlA014sqsZl7y9tEQ4R5EdXN-330PBndAFgPNnJZA1qa72leLDKh41paEMuMNkiDSTQ-oBveT02qEL8LtRWejoJK/s400/BINTANG.png);
+  background-size: 400px;
+  background-repeat: repeat;
+  background-position: center;
+}
 /*====LINK====*/
 a,
 a:visited {
@@ -654,6 +662,23 @@ ul#medsos-list li a {
 ul#medsos-list li a img {
   width: 100%;
 }
+/*====ERROR PAGE====*/
+section#error-area {
+  width: var(--wdt);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+}
+section#error-area h1 {
+  font-size: 8em;
+  margin: 0;
+  color: var(--acn1);
+}
 @media (min-width: 640px) and (max-width: 960px) {
   :root {
     --wdt: 600px;
@@ -669,6 +694,9 @@ ul#medsos-list li a img {
   }
   .section-container-handler {
     padding: 20px;
+  }
+  section#error-area {
+    align-items: flex-start;
   }
 }
 @media (max-width: 639px) {
