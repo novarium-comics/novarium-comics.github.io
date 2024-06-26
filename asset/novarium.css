@@ -235,7 +235,7 @@ hr {
 }
 .gallery ul li {
   list-style: none;
-  width: 33.33%;
+  width: calc(1 / 3 * 100%);
   overflow: hidden;
   position: relative;
 }
@@ -268,6 +268,7 @@ hr {
   background: var(--acn1);
   color: var(--blk);
   opacity: 0;
+  transition: opacity 0.25s;
 }
 .gallery ul li .caption .cap-title {
   font-weight: 900;
@@ -282,12 +283,19 @@ hr {
 .gallery.small li {
   height: 200px;
 }
-.gallery.a-paper li,
-.gallery.a-paper .gallery-thumb {
+.gallery.a-paper ul li,
+.gallery.a-paper ul li .gallery-thumb {
   aspect-ratio: 210/297;
 }
-.gallery.square li,
-.gallery.square .gallery-thumb {
+.gallery.a-paper ul li.landscape {
+  width: calc(2 / 3 * 100%);
+}
+.gallery.a-paper ul li.landscape,
+.gallery.a-paper ul li.landscape .gallery-thumb {
+  aspect-ratio: 42/21;
+}
+.gallery.square ul li,
+.gallery.square ul li .gallery-thumb {
   aspect-ratio: 1;
 }
 /*====FULL HEIGHT====*/
@@ -384,9 +392,14 @@ input:checked + .burger-menu::before {
   height: max(180px, calc((180 / 1243) * 100vw));
 }
 #head-area h1 {
-  color: var(--wht);
-  padding: 0 50px;
+  color: transparent;
+  padding: 30px 50px;
   line-height: 1.2em;
+  background-image: url(https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhgGyuM9INq74J299Pi68R_3TQSD8uMcAm9K2bRGL3t_EuzgLxAHK3gpmJn_-yc7WJTnOGbk0GwFWYfky9O9bSNEzoSMh6Rl_SCO37ozRMMU3TIGKN59Nxo3CuGW0F-cFFsf6q1fsmpv4BwOYv0XdwSeiAE8lXqh4Yo7b_Aw4UtnaAW8nvC-OUCRuwOg59H/s800/LOGO_PUTIH.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 0 30px;
 }
 /*====LANDING PAGE====*/
 #footer-container,
@@ -454,10 +467,12 @@ h2.section-heading.full-height::before {
 #comic-description p > span {
   font-size: 0.9em;
   color: var(--acn2);
+  font-weight: bold;
 }
 #comic-description p > span::after {
   content: "|";
   margin: 10px;
+  font-weight: normal;
 }
 #comic-description p > span:last-child::after {
   content: "";
@@ -489,8 +504,17 @@ h1#comic-title {
   color: var(--blk);
   line-height: 1.2em;
 }
-#comic-author li {
-  list-style: none;
+#comic-author ol {
+  margin-left: 20px;
+}
+#comic-author ol li {
+  list-style: decimal;
+  padding-left: 0.5em;
+}
+#comic-author ol li::marker {
+  font-weight: bold;
+  font-style: italic;
+  color: var(--gry3);
 }
 #comic-navigation {
   margin-top: 50px;
@@ -597,6 +621,7 @@ ul#medsos-list li a img {
     height: 0;
     overflow: hidden;
     padding: 0;
+    transition: height 0.25s;
   }
   #nav-menu input:checked + label + ul {
     padding: 10px;
