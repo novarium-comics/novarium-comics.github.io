@@ -173,6 +173,10 @@ hr {
         display: flex;
         li {
             background: var(--acn1);
+            &:has(a[data-disabled="true"]) {
+                background: var(--gry1);
+                font-style: italic;
+            }
             a {
                 padding: 10px 30px;
                 color: var(--blk);
@@ -181,6 +185,10 @@ hr {
                 flex-wrap: nowrap;
                 align-items: center;
                 justify-content: flex-start;
+                &[data-disabled="true"] {
+                    color: var(--gry3);
+                    cursor: not-allowed;
+                }
                 img {
                     width: 1.2em;
                     margin-right: 1em;

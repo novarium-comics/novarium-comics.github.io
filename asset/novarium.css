@@ -171,6 +171,10 @@ hr {
 .button-group ul li {
   background: var(--acn1);
 }
+.button-group ul li:has(a[data-disabled="true"]) {
+  background: var(--gry1);
+  font-style: italic;
+}
 .button-group ul li a {
   padding: 10px 30px;
   color: var(--blk);
@@ -179,6 +183,10 @@ hr {
   flex-wrap: nowrap;
   align-items: center;
   justify-content: flex-start;
+}
+.button-group ul li a[data-disabled="true"] {
+  color: var(--gry3);
+  cursor: not-allowed;
 }
 .button-group ul li a img {
   width: 1.2em;
