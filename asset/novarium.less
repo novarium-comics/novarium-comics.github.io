@@ -363,11 +363,24 @@ h2#site-title {
 
 .burger-menu {
     display: none;
+    font-family: 'Material Symbols Outlined';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 2em;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-smoothing: antialiased;
+    color: var(--acn2);
+    font-weight: bold;
     &::before {
         content: "Menu";
     }
     input:checked + &::before {
-        content: "Tutup";
+        content: "Close";
     }
 }
 

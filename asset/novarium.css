@@ -339,12 +339,24 @@ h2#site-title a {
 }
 .burger-menu {
   display: none;
+  font-family: 'Material Symbols Outlined';
+  font-style: normal;
+  font-size: 2em;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  color: var(--acn2);
+  font-weight: bold;
 }
 .burger-menu::before {
   content: "Menu";
 }
 input:checked + .burger-menu::before {
-  content: "Tutup";
+  content: "Close";
 }
 #nav-menu ul {
   display: flex;
@@ -621,7 +633,6 @@ ul#medsos-list li a img {
     height: 0;
     overflow: hidden;
     padding: 0;
-    transition: height 0.25s;
   }
   #nav-menu input:checked + label + ul {
     padding: 10px;
