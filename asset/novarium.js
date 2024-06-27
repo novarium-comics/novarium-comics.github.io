@@ -29,10 +29,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const lightboxImage = document.getElementById('lightbox-image');
     const lightboxTitle = document.getElementById('lightbox-title');
     const lightboxSubtitle = document.getElementById('lightbox-subtitle');
-    const prevButton = document.querySelector('.prev');
-    const nextButton = document.querySelector('.next');
-    const closeButton = document.querySelector('.close');
+    const prevButton = document.querySelector('.lb-prev');
+    const nextButton = document.querySelector('.lb-next');
+    const closeButton = document.querySelector('.lb-close');
     const lightboxThumbnails = document.getElementById('lightbox-thumbnails');
+    const loadingIndicator = document.querySelector('.lb-loading');
     
     let currentImageIndex = 0;
     
@@ -51,14 +52,29 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     function openLightbox(img) {
-      const fullResSrc = img.getAttribute('data-fullres');
+      let fullResSrc = img.getAttribute('data-fullres');
+      if (!fullResSrc) {
+        fullResSrc = img.src;
+      }
+      
       const caption = img.closest('li').querySelector('.caption');
       const title = caption.querySelector('.cap-title').innerText;
       const subtitle = caption.querySelector('.cap-subtitle').innerText;
       
-      lightboxImage.src = fullResSrc;
-      lightboxTitle.innerText = title;
-      lightboxSubtitle.innerText = subtitle;
+      lightboxImage.style.display = 'none';
+      loadingIndicator.style.display = 'block';
+      lightboxImage.alt = title;
+  
+      const tempImg = new Image();
+      tempImg.onload = () => {
+        lightboxImage.src = fullResSrc;
+        lightboxTitle.innerText = title;
+        lightboxSubtitle.innerText = subtitle;
+        
+        loadingIndicator.style.display = 'none';
+        lightboxImage.style.display = 'block';
+      };
+      tempImg.src = fullResSrc;
       
       lightboxOverlay.style.display = 'block';
     }
