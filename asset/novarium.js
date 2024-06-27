@@ -131,11 +131,13 @@ document.addEventListener('DOMContentLoaded', function() {
         });
       }
     });
-    const parallaxContainer = document.querySelector('.parallax-container');
-    const parallaxImage = document.querySelector('.parallax-img');
-  
+    const parallaxContainers = document.querySelectorAll('.parallax-container');
+
     window.addEventListener('scroll', function() {
       let scrollPosition = window.scrollY;
-      parallaxImage.style.transform = 'translateY(' + scrollPosition * 0.5 + 'px)';
+      parallaxContainers.forEach(container => {
+        const parallaxImage = container.querySelector('.parallax-img');
+        parallaxImage.style.transform = 'translateY(' + scrollPosition * 0.5 + 'px)';
+      });
     });
 });
