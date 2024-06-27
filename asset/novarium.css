@@ -558,6 +558,14 @@ h2.section-heading.full-height:hover::before {
   align-items: center;
   justify-content: center;
 }
+#comic-video a[data-youtube] img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+}
 #comic-video a[data-youtube]::before {
   font-family: 'Material Symbols Outlined';
   font-weight: normal;
