@@ -608,6 +608,9 @@ input:checked + .burger-menu::before {
 .parallax-container .parallax-img.par-section {
   background-image: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhPJlPE3gngJRCv_xLH3vHg_dO3Gz8IZaIrcpB701Xg_QAVt3X4js1upHCiudsG8KVG16sIWtifAYYBg95oNm60YTeupxfsiMHPpDsvNd8ponxv-YC006S0StGd4hiMc9MGZboH6CqJtATSQcFThiScVcnSZ2iRG9eX_AqYO8edVTG_opTEJ7z6Fn6Ufldw/s1920/BANNER_LINE.jpg');
 }
+.parallax-container span {
+  z-index: 1;
+}
 /*====LANDING PAGE====*/
 #footer-container,
 #summary {
