@@ -367,6 +367,9 @@ hr.thick {
 .gallery.hd ul li.landscape .gallery-thumb {
   aspect-ratio: 16/9;
 }
+.gallery.lightbox li {
+  cursor: pointer;
+}
 /*====LIGHTBOX====*/
 #lightbox-overlay {
   display: none;
@@ -424,7 +427,7 @@ hr.thick {
 .lb-close:hover,
 .lb-prev:hover,
 .lb-next:hover {
-  columns: var(--wht);
+  color: var(--wht);
 }
 .lb-close {
   right: 20px;
