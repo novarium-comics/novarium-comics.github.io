@@ -1,2 +1,2 @@
-# novarium-comics.github.io
-A main Repository for Novarium
+# novarium omics
+A landing page for Novarium
