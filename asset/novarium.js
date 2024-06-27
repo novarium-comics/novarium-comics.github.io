@@ -1,1 +1,141 @@
-document.addEventListener("DOMContentLoaded",function(){if("non-home"===document.body.id){let e=document.querySelectorAll("[data-youtube]");for(let t of e){let l=new URL(t.href).searchParams.get("v");t.setAttribute("data-youtube",l),t.setAttribute("role","button"),t.innerHTML=`<img alt="" src="https://img.youtube.com/vi/${l}/maxresdefault.jpg"><br>${t.textContent}`}document.addEventListener("click",function e(t){let l=t.target.closest("[data-youtube]");if(!l)return;t.preventDefault();let r=l.getAttribute("data-youtube"),i=document.createElement("div");i.innerHTML=`<iframe width="900" height="507" src="https://www.youtube-nocookie.com/embed/${r}?autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`,l.replaceWith(i)})}document.querySelectorAll(".gallery.lightbox").forEach(e=>{let t=e.querySelectorAll(".gallery-thumb img"),l=document.getElementById("lightbox-overlay"),r=document.getElementById("lightbox-image"),i=document.getElementById("lightbox-title"),n=document.getElementById("lightbox-subtitle"),o=document.querySelector(".lb-prev"),c=document.querySelector(".lb-next"),a=document.querySelector(".lb-close"),s=document.getElementById("lightbox-thumbnails"),d=document.querySelector(".lb-loading"),u=0;function y(e){let t=e.getAttribute("data-fullres");t||(t=e.src);let o=e.closest("li").querySelector(".caption"),c=o.querySelector(".cap-title").innerText,a=o.querySelector(".cap-subtitle").innerText;r.style.display="none",d.style.display="block",r.alt=c;let y=new Image;y.onload=()=>{r.src=t,i.innerText=c,n.innerText=a,d.style.display="none",r.style.display="block",s.querySelectorAll("img").forEach((e,t)=>{t===u?e.classList.add("thumb-active"):e.classList.remove("thumb-active")})},y.src=t,l.style.display="block"}function b(){l.style.display="none"}t&&t.length>0&&t.forEach((e,t)=>{e.addEventListener("click",()=>{u=t,y(e)});let l=e.cloneNode();l.addEventListener("click",()=>{u=t,y(e)}),s.appendChild(l)}),a&&a.addEventListener("click",b),c&&c.addEventListener("click",function e(){y(t[u=(u+1)%t.length])}),o&&o.addEventListener("click",function e(){y(t[u=(u-1+t.length)%t.length])}),l&&l.addEventListener("click",function(e){e.target===l&&b()})})});
+document.addEventListener('DOMContentLoaded', function() {
+    if (document.body.id === 'non-home') {
+      // Progressive enhancement for YouTube videos
+      let videos = document.querySelectorAll('[data-youtube]');
+    
+      for (let video of videos) {
+        let id = new URL(video.href).searchParams.get('v');
+        video.setAttribute('data-youtube', id);
+        video.setAttribute('role', 'button');
+        video.innerHTML = `<img alt="" src="https://img.youtube.com/vi/${id}/maxresdefault.jpg"><br>${video.textContent}`;
+      }
+    
+      function clickHandler(event) {
+        let link = event.target.closest('[data-youtube]');
+        if (!link) return;
+        event.preventDefault();
+        let id = link.getAttribute('data-youtube');
+        let player = document.createElement('div');
+        player.innerHTML = `<iframe width="900" height="507" src="https://www.youtube-nocookie.com/embed/${id}?autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`;
+        link.replaceWith(player);
+      }
+    
+      document.addEventListener('click', clickHandler);
+    }
+  
+    // Lightbox functionality for .gallery.lightbox only
+    const lightboxGalleries = document.querySelectorAll('.gallery.lightbox');
+    
+    lightboxGalleries.forEach(gallery => {
+      const galleryImages = gallery.querySelectorAll('.gallery-thumb img');
+      const lightboxOverlay = document.getElementById('lightbox-overlay');
+      const lightboxImage = document.getElementById('lightbox-image');
+      const lightboxTitle = document.getElementById('lightbox-title');
+      const lightboxSubtitle = document.getElementById('lightbox-subtitle');
+      const prevButton = document.querySelector('.lb-prev');
+      const nextButton = document.querySelector('.lb-next');
+      const closeButton = document.querySelector('.lb-close');
+      const lightboxThumbnails = document.getElementById('lightbox-thumbnails');
+      const loadingIndicator = document.querySelector('.lb-loading');
+    
+      let currentImageIndex = 0;
+      
+      if (galleryImages && galleryImages.length > 0) {
+        galleryImages.forEach((img, index) => {
+          img.addEventListener('click', () => {
+            currentImageIndex = index;
+            openLightbox(img);
+          });
+      
+          const thumbnail = img.cloneNode();
+          thumbnail.addEventListener('click', () => {
+            currentImageIndex = index;
+            openLightbox(img);
+          });
+          lightboxThumbnails.appendChild(thumbnail);
+        });
+      }
+      
+      function openLightbox(img) {
+        let fullResSrc = img.getAttribute('data-fullres');
+        if (!fullResSrc) {
+          fullResSrc = img.src;
+        }
+        
+        const caption = img.closest('li').querySelector('.caption');
+        const title = caption.querySelector('.cap-title').innerText;
+        const subtitle = caption.querySelector('.cap-subtitle').innerText;
+        
+        lightboxImage.style.display = 'none';
+        loadingIndicator.style.display = 'block';
+        lightboxImage.alt = title;
+    
+        const tempImg = new Image();
+        tempImg.onload = () => {
+          lightboxImage.src = fullResSrc;
+          lightboxTitle.innerText = title;
+          lightboxSubtitle.innerText = subtitle;
+          
+          loadingIndicator.style.display = 'none';
+          lightboxImage.style.display = 'block';
+    
+          updateActiveThumbnail();
+        };
+        tempImg.src = fullResSrc;
+        
+        lightboxOverlay.style.display = 'block';
+      }
+    
+      function closeLightbox() {
+        lightboxOverlay.style.display = 'none';
+      }
+    
+      function showNextImage() {
+        currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+        openLightbox(galleryImages[currentImageIndex]);
+      }
+    
+      function showPrevImage() {
+        currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+        openLightbox(galleryImages[currentImageIndex]);
+      }
+    
+      function updateActiveThumbnail() {
+        const thumbnails = lightboxThumbnails.querySelectorAll('img');
+        thumbnails.forEach((thumb, index) => {
+          if (index === currentImageIndex) {
+            thumb.classList.add('thumb-active');
+          } else {
+            thumb.classList.remove('thumb-active');
+          }
+        });
+      }
+    
+      if (closeButton) {
+        closeButton.addEventListener('click', closeLightbox);
+      }
+      
+      if (nextButton) {
+        nextButton.addEventListener('click', showNextImage);
+      }
+      
+      if (prevButton) {
+        prevButton.addEventListener('click', showPrevImage);
+      }
+    
+      if (lightboxOverlay) {
+        lightboxOverlay.addEventListener('click', function(event) {
+          if (event.target === lightboxOverlay) {
+            closeLightbox();
+          }
+        });
+      }
+    });
+    const headArea = document.getElementById('head-area');
+  
+    window.addEventListener('scroll', function() {
+      let offset = window.scrollY;
+      headArea.style.backgroundPositionY = offset * 0.5 + 'px';
+    });
+});
+  
