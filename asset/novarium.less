@@ -412,27 +412,51 @@ hr {
   }
   
   .lb-close, .lb-prev, .lb-next {
-    color: var(--wht);
+    color: var(--acn1);
     cursor: pointer;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     font-size: 40px;
     padding: 10px;
+    font-family: 'Material Symbols Outlined';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 4em;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-smoothing: antialiased;
+    &:hover {
+        columns: var(--wht);
+    }
   }
   
   .lb-close {
     right: 20px;
     top: 20px;
     transform: none;
+    &::before {
+        content: "close";
+    }
   }
   
   .lb-prev {
     left: 20px;
+    &::before {
+        content: "chevron_left";
+    }
   }
   
   .lb-next {
     right: 20px;
+    &::before {
+        content: "chevron_right";
+    }
   }
   
   #lightbox-thumbnails {
@@ -448,6 +472,15 @@ hr {
         aspect-ratio: 210/297;
         margin: 5px;
         cursor: pointer;
+        filter: brightness(50%);
+        transition: filter 0.25s;
+        &:hover {
+            filter: brightness(80%);
+        }
+        &.thumb-active {
+            border: 3px solid var(--acn1);
+            filter: none;
+        }
       }
   }
 
