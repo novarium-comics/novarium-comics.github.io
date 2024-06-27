@@ -134,10 +134,18 @@ document.addEventListener('DOMContentLoaded', function() {
     const parallaxContainers = document.querySelectorAll('.parallax-container');
 
     window.addEventListener('scroll', function() {
-      let scrollPosition = window.scrollY;
       parallaxContainers.forEach(container => {
         const parallaxImage = container.querySelector('.parallax-img');
-        parallaxImage.style.transform = 'translateY(' + scrollPosition * 0.5 + 'px)';
+        const containerRect = container.getBoundingClientRect();
+        const containerTop = containerRect.top;
+        const containerHeight = containerRect.height;
+  
+        // Calculate the scroll percentage relative to the container
+        if (containerTop <= window.innerHeight && containerTop + containerHeight >= 0) {
+          const scrollPercent = (window.innerHeight - containerTop) / (window.innerHeight + containerHeight);
+          const translateY = scrollPercent * 50; // Adjust 50 to control the speed of the parallax effect
+          parallaxImage.style.transform = 'translateY(' + translateY + 'px)';
+        }
       });
     });
 });
