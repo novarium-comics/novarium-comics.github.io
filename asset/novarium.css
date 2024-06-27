@@ -878,6 +878,9 @@ section#error-area h1 {
   .burger-menu {
     display: block;
   }
+  section#error-area {
+    align-items: flex-start;
+  }
   #nav-menu ul {
     position: fixed;
     background: var(--acn1);
