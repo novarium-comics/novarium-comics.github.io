@@ -67,7 +67,7 @@ body {
         left: 0;
         right: 0;
         width: 100%;
-        height: ~"max(180px, calc((180 / 1243) * 100vw))";
+        height: ~"max(120px, calc((180 / 1243) * 100vw))";
         background-image: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhSC1qXynZGItlvfr5_xwdYHt5zicb6nqVtXJDW9ZqO4Fc50D_MSzRwck7vch4R1jN2sYuLx65uBjRBEQm9Qg4PQ0AmHVTPy69_IrASkevVoStSElQ78i9LW_2JjuymLnpMhQWu2zSnR4borr-EWUXAcYspdcXo5t-yvUso1UGb9RfqP7aXa_Xr19jt9Aos/s1920/bar3-r.png');
         background-repeat: repeat-x;
         z-index: -1;
@@ -146,16 +146,14 @@ p {
     }
 }
 
-span {
-    .acn1 {color: var(--acn1);}
-    .acn2 {color: var(--acn2);}
-    .acn3 {color: var(--acn3);}
-    .gry1 {color: var(--gry1);}
-    .gry2 {color: var(--gry2);}
-    .gry3 {color: var(--gry3);}
-    .wht {color: var(--wht);}
-    .blk {color: var(--blk);}
-}
+.acn1 {color: var(--acn1);}
+.acn2 {color: var(--acn2);}
+.acn3 {color: var(--acn3);}
+.gry1 {color: var(--gry1);}
+.gry2 {color: var(--gry2);}
+.gry3 {color: var(--gry3);}
+.wht {color: var(--wht);}
+.blk {color: var(--blk);}
 
 hr {
     border: 1px solid var(--gry1);
@@ -600,7 +598,7 @@ h2#site-title {
         background-size: cover;
         overflow: hidden;
         background-repeat: repeat-x;
-        height: ~"max(180px, calc((180 / 1243) * 100vw))";
+        height: ~"max(180px, calc((120 / 1243) * 100vw))";
     }
     h1 {
         color: transparent;
@@ -638,7 +636,7 @@ h2.section-heading.full-height {
         overflow: hidden;
         background-repeat: repeat-x;
         transition: all 0.25s;
-        height: ~"max(180px, calc((180 / 1243) * 100vw))";
+        height: ~"max(180px, calc((120 / 1243) * 100vw))";
     }
     &::after {
         bottom: -1px;
@@ -969,6 +967,15 @@ section#error-area {
 
     #nav-container, #footer-container, #summary, #non-home #main-area, .section-container {
         min-width: 320px;
+    }
+
+    h2.section-heading.full-height {
+        &::after {
+            background-position: left bottom;
+        }
+        &::before {
+            background-position: right top;
+        }
     }
 
     #footer-container {
