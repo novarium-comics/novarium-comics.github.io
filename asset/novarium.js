@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }
   
       /**
-       * Handle click events on the video thumbnails
+       * Handle click events on the video
        * @param  {Event} event The event object
        */
       function clickHandler(event) {
