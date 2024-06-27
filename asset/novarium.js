@@ -1,67 +1,90 @@
-document.addEventListener("DOMContentLoaded", function() {
-    if ("non-home" === document.body.id) {
-        let e = document.querySelectorAll("[data-youtube]");
-        for (let t of e) {
-            let r = new URL(t.href).searchParams.get("v");
-            t.setAttribute("data-youtube", r), t.setAttribute("role", "button"), t.innerHTML = `<img alt="" src="https://img.youtube.com/vi/${r}/maxresdefault.jpg"><br>
-          ${t.textContent}`
-        }
-        document.addEventListener("click", function e(t) {
-            let r = t.target.closest("[data-youtube]");
-            if (!r) return;
-            t.preventDefault();
-            let o = r.getAttribute("data-youtube"),
-                i = document.createElement("div");
-            i.innerHTML = `<iframe width="900" height="507" src="https://www.youtube-nocookie.com/embed/${o}?autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`, r.replaceWith(i)
-        })
+document.addEventListener('DOMContentLoaded', function() {
+    if (document.body.id === 'non-home') {
+      // Progressive enhancement for YouTube videos
+      let videos = document.querySelectorAll('[data-youtube]');
+    
+      for (let video of videos) {
+        let id = new URL(video.href).searchParams.get('v');
+        video.setAttribute('data-youtube', id);
+        video.setAttribute('role', 'button');
+        video.innerHTML = `<img alt="" src="https://img.youtube.com/vi/${id}/maxresdefault.jpg"><br>${video.textContent}`;
+      }
+    
+      function clickHandler(event) {
+        let link = event.target.closest('[data-youtube]');
+        if (!link) return;
+        event.preventDefault();
+        let id = link.getAttribute('data-youtube');
+        let player = document.createElement('div');
+        player.innerHTML = `<iframe width="900" height="507" src="https://www.youtube-nocookie.com/embed/${id}?autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`;
+        link.replaceWith(player);
+      }
+    
+      document.addEventListener('click', clickHandler);
     }
-    let e = document.querySelectorAll(".gallery-thumb img"),
-        t = document.getElementById("lightbox-overlay"),
-        l = document.getElementById("lightbox-image"),
-        n = document.getElementById("lightbox-title"),
-        i = document.getElementById("lightbox-subtitle"),
-        c = document.querySelector(".prev"),
-        r = document.querySelector(".next"),
-        o = document.querySelector(".close"),
-        d = document.getElementById("lightbox-thumbnails"),
-        a = 0;
-
-    function s(e) {
-        let c = e.getAttribute("data-fullres"),
-            r = e.closest("li").querySelector(".caption"),
-            o = r.querySelector(".cap-title").innerText,
-            d = r.querySelector(".cap-subtitle").innerText;
-        l.src = c;
-        n.innerText = o;
-        i.innerText = d;
-        t.style.display = "block";
+  
+    // Lightbox functionality
+    const galleryImages = document.querySelectorAll('.gallery-thumb img');
+    const lightboxOverlay = document.getElementById('lightbox-overlay');
+    const lightboxImage = document.getElementById('lightbox-image');
+    const lightboxTitle = document.getElementById('lightbox-title');
+    const lightboxSubtitle = document.getElementById('lightbox-subtitle');
+    const prevButton = document.querySelector('.prev');
+    const nextButton = document.querySelector('.next');
+    const closeButton = document.querySelector('.close');
+    const lightboxThumbnails = document.getElementById('lightbox-thumbnails');
+    
+    let currentImageIndex = 0;
+    
+    galleryImages.forEach((img, index) => {
+      img.addEventListener('click', () => {
+        currentImageIndex = index;
+        openLightbox(img);
+      });
+  
+      const thumbnail = img.cloneNode();
+      thumbnail.addEventListener('click', () => {
+        currentImageIndex = index;
+        openLightbox(img);
+      });
+      lightboxThumbnails.appendChild(thumbnail);
+    });
+    
+    function openLightbox(img) {
+      const fullResSrc = img.getAttribute('data-fullres');
+      const caption = img.closest('li').querySelector('.caption');
+      const title = caption.querySelector('.cap-title').innerText;
+      const subtitle = caption.querySelector('.cap-subtitle').innerText;
+      
+      lightboxImage.src = fullResSrc;
+      lightboxTitle.innerText = title;
+      lightboxSubtitle.innerText = subtitle;
+      
+      lightboxOverlay.style.display = 'block';
     }
-
-    function u() {
-        t.style.display = "none";
+  
+    function closeLightbox() {
+      lightboxOverlay.style.display = 'none';
     }
-
-    e.forEach((e, t) => {
-        e.addEventListener("click", () => {
-            a = t;
-            s(e);
-        });
-        let l = e.cloneNode();
-        l.addEventListener("click", () => {
-            a = t;
-            s(e);
-        });
-        d.appendChild(l);
+  
+    function showNextImage() {
+      currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+      openLightbox(galleryImages[currentImageIndex]);
+    }
+  
+    function showPrevImage() {
+      currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+      openLightbox(galleryImages[currentImageIndex]);
+    }
+  
+    closeButton.addEventListener('click', closeLightbox);
+    nextButton.addEventListener('click', showNextImage);
+    prevButton.addEventListener('click', showPrevImage);
+  
+    lightboxOverlay.addEventListener('click', function(event) {
+      if (event.target === lightboxOverlay) {
+        closeLightbox();
+      }
     });
-
-    o.addEventListener("click", u);
-    r.addEventListener("click", function t() {
-        s(e[a = (a + 1) % e.length]);
-    });
-    c.addEventListener("click", function t() {
-        s(e[a = (a - 1 + e.length) % e.length]);
-    });
-    t.addEventListener("click", function(e) {
-        e.target === t && u();
-    });    
-});
+  });
+  
