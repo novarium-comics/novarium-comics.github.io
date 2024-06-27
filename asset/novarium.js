@@ -37,19 +37,21 @@ document.addEventListener('DOMContentLoaded', function() {
     
     let currentImageIndex = 0;
     
-    galleryImages.forEach((img, index) => {
-      img.addEventListener('click', () => {
-        currentImageIndex = index;
-        openLightbox(img);
+    if (galleryImages && galleryImages.length > 0) {
+      galleryImages.forEach((img, index) => {
+        img.addEventListener('click', () => {
+          currentImageIndex = index;
+          openLightbox(img);
+        });
+    
+        const thumbnail = img.cloneNode();
+        thumbnail.addEventListener('click', () => {
+          currentImageIndex = index;
+          openLightbox(img);
+        });
+        lightboxThumbnails.appendChild(thumbnail);
       });
-  
-      const thumbnail = img.cloneNode();
-      thumbnail.addEventListener('click', () => {
-        currentImageIndex = index;
-        openLightbox(img);
-      });
-      lightboxThumbnails.appendChild(thumbnail);
-    });
+    }
     
     function openLightbox(img) {
       let fullResSrc = img.getAttribute('data-fullres');
@@ -93,14 +95,23 @@ document.addEventListener('DOMContentLoaded', function() {
       openLightbox(galleryImages[currentImageIndex]);
     }
   
-    closeButton.addEventListener('click', closeLightbox);
-    nextButton.addEventListener('click', showNextImage);
-    prevButton.addEventListener('click', showPrevImage);
+    if (closeButton) {
+      closeButton.addEventListener('click', closeLightbox);
+    }
+    
+    if (nextButton) {
+      nextButton.addEventListener('click', showNextImage);
+    }
+    
+    if (prevButton) {
+      prevButton.addEventListener('click', showPrevImage);
+    }
   
-    lightboxOverlay.addEventListener('click', function(event) {
-      if (event.target === lightboxOverlay) {
-        closeLightbox();
-      }
-    });
-  });
-  
+    if (lightboxOverlay) {
+      lightboxOverlay.addEventListener('click', function(event) {
+        if (event.target === lightboxOverlay) {
+          closeLightbox();
+        }
+      });
+    }
+  });  
