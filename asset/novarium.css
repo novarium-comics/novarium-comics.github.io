@@ -916,7 +916,7 @@ section#error-area h1 {
   #summary,
   #non-home #main-area,
   .section-container {
-    min-width: 320px;
+    min-width: 300px;
   }
   h2.section-heading.full-height::after {
     background-position: left bottom;
