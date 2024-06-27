@@ -554,16 +554,12 @@ input:checked + .burger-menu::before {
 #head-area {
   background-color: var(--acn1);
   height: 100vh;
-  height: 100lvh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   position: relative;
-  background-image: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhd5UcAM9XAIoUwQByiZBcPHPboU4wKBbazR7Nb5c_HSHgf19-ahrsWRkFuzNNFxX7b6wPhmfjkiUMJNkNM6GxcCRWK8YypLxVUR4oAWxx1eqkMul6slROTMQDxocXH7hWmwxgs07ZEbhZuGhw21tfcznYLZyW3Rneh0jZSse2r1TD4uaBTIPoUWmpTm0Fh/s1920/BANNER-COL.jpg');
-  background-size: 120%;
-  background-attachment: fixed;
-  background-position: left bottom;
+  overflow: hidden;
 }
 #head-area::after {
   content: "";
@@ -589,6 +585,20 @@ input:checked + .burger-menu::before {
   background-position: center;
   margin: 0 30px;
   max-width: 80%;
+}
+.parallax-container {
+  position: relative;
+  overflow: hidden;
+}
+.parallax-container .parallax-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translateY(0);
+  transition: transform 0.1s linear;
 }
 /*====LANDING PAGE====*/
 #footer-container,
