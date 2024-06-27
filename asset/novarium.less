@@ -587,7 +587,7 @@ h2#site-title {
         position: absolute;
         bottom: -1px;
         left: 0;
-        background: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhuNylCz5e65rPQIwMzOJ2f1uaeyXxlMPmQ_TsRf4X12fbYmqN14vgmDVBn94f_ifLxnZ8R2GnZ4KGoE6vK5eR1orrBacNZOlonjw0GndE7arNYxaIcH5cclcsNpu1dUCCiJcE0bGYuwuj3PPByr3iFBRlF0ySqH7ldBhpxV254zl5k2UySdm_NDfw4dHrJ/s1920/bar.png');
+        background-image: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhuNylCz5e65rPQIwMzOJ2f1uaeyXxlMPmQ_TsRf4X12fbYmqN14vgmDVBn94f_ifLxnZ8R2GnZ4KGoE6vK5eR1orrBacNZOlonjw0GndE7arNYxaIcH5cclcsNpu1dUCCiJcE0bGYuwuj3PPByr3iFBRlF0ySqH7ldBhpxV254zl5k2UySdm_NDfw4dHrJ/s1920/bar.png');
         z-index: 99;
         width: 100%;
         background-position: left bottom;
@@ -606,6 +606,7 @@ h2#site-title {
         background-position: center;
         margin: 0 30px;
         max-width: 80%;
+        z-index: 1;
     }
 }
 
@@ -616,11 +617,23 @@ h2#site-title {
         position: absolute;
         top: 0;
         left: 0;
-        width: 100%;
-        height: 100%;
+        min-width: 100%;
+        min-height: 100%;
         object-fit: cover;
         transform: translateY(0);
         transition: transform 0.1s linear;
+        background-position: center;
+        background-size: cover;
+    }
+    &.par-header {
+        .parallax-img {
+            background-image: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhd5UcAM9XAIoUwQByiZBcPHPboU4wKBbazR7Nb5c_HSHgf19-ahrsWRkFuzNNFxX7b6wPhmfjkiUMJNkNM6GxcCRWK8YypLxVUR4oAWxx1eqkMul6slROTMQDxocXH7hWmwxgs07ZEbhZuGhw21tfcznYLZyW3Rneh0jZSse2r1TD4uaBTIPoUWmpTm0Fh/s1920/BANNER-COL.jpg');
+        }
+    }
+    &.par-section {
+        .parallax-img {
+            background-image: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhPJlPE3gngJRCv_xLH3vHg_dO3Gz8IZaIrcpB701Xg_QAVt3X4js1upHCiudsG8KVG16sIWtifAYYBg95oNm60YTeupxfsiMHPpDsvNd8ponxv-YC006S0StGd4hiMc9MGZboH6CqJtATSQcFThiScVcnSZ2iRG9eX_AqYO8edVTG_opTEJ7z6Fn6Ufldw/s1920/BANNER_LINE.jpg');
+        }
     }
 }
 

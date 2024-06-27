@@ -136,6 +136,6 @@ document.addEventListener('DOMContentLoaded', function() {
   
     window.addEventListener('scroll', function() {
       let scrollPosition = window.scrollY;
-      parallaxImage.style.transform = 'translateY(' + scrollPosition * -0.25 + 'px)';
+      parallaxImage.style.transform = 'translateY(' + scrollPosition * 0.5 + 'px)';
     });
 });
