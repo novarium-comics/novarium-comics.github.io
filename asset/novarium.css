@@ -61,7 +61,7 @@ body {
   color: var(--blk);
   font-family: Lato, sans-serif;
   font-weight: 400;
-  font-size: 12pt;
+  font-size: 13pt;
   line-height: 2em;
   position: relative;
   background-image: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg2vN06a1LJ5F9yX3sPR2xjcirGVAQeSsP2l3qi1SfnTyNF7G-S8B-4FzNXtepVHS2-PPzyltPbd8j5FywKdLLdh4NwQnIVLeugavgauXxyTgrBgQ-6Ac2DhgiSqukjj8r81jVbTTuIwRfM-uIUhFkMTw9GzvGc8h9UAys1UR4_K2p9IOcK1tPgpN73hP_G/s800/bar2.png');
@@ -577,7 +577,7 @@ input:checked + .burger-menu::before {
   background-size: cover;
   overflow: hidden;
   background-repeat: repeat-x;
-  height: max(180px, calc((120 / 1243) * 100vw));
+  height: max(120px, calc((180 / 1243) * 100vw));
 }
 #head-area h1 {
   color: transparent;
@@ -588,6 +588,7 @@ input:checked + .burger-menu::before {
   background-repeat: no-repeat;
   background-position: center;
   margin: 0 30px;
+  max-width: 80%;
 }
 /*====LANDING PAGE====*/
 #footer-container,
@@ -614,7 +615,7 @@ h2.section-heading.full-height::after {
   overflow: hidden;
   background-repeat: repeat-x;
   transition: all 0.25s;
-  height: max(180px, calc((120 / 1243) * 100vw));
+  height: max(120px, calc((180 / 1243) * 100vw));
 }
 h2.section-heading.full-height::after {
   bottom: -1px;
@@ -829,7 +830,7 @@ section#error-area h1 {
     --wdt: 600px;
   }
   body {
-    font-size: 11pt;
+    font-size: 12pt;
   }
   .gallery ul li {
     width: 50%;
@@ -849,7 +850,7 @@ section#error-area h1 {
     --wdt: 90%;
   }
   body {
-    font-size: 10pt;
+    font-size: 11pt;
   }
   body#non-home::before {
     top: -43px;
