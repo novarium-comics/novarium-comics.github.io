@@ -75,6 +75,8 @@ document.addEventListener('DOMContentLoaded', function() {
         
         loadingIndicator.style.display = 'none';
         lightboxImage.style.display = 'block';
+  
+        updateActiveThumbnail();
       };
       tempImg.src = fullResSrc;
       
@@ -93,6 +95,17 @@ document.addEventListener('DOMContentLoaded', function() {
     function showPrevImage() {
       currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
       openLightbox(galleryImages[currentImageIndex]);
+    }
+  
+    function updateActiveThumbnail() {
+      const thumbnails = lightboxThumbnails.querySelectorAll('img');
+      thumbnails.forEach((thumb, index) => {
+        if (index === currentImageIndex) {
+          thumb.classList.add('thumb-active');
+        } else {
+          thumb.classList.remove('thumb-active');
+        }
+      });
     }
   
     if (closeButton) {
@@ -114,4 +127,4 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       });
     }
-  });  
+  });
