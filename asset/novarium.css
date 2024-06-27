@@ -561,7 +561,7 @@ input:checked + .burger-menu::before {
   align-items: center;
   position: relative;
   background-image: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhd5UcAM9XAIoUwQByiZBcPHPboU4wKBbazR7Nb5c_HSHgf19-ahrsWRkFuzNNFxX7b6wPhmfjkiUMJNkNM6GxcCRWK8YypLxVUR4oAWxx1eqkMul6slROTMQDxocXH7hWmwxgs07ZEbhZuGhw21tfcznYLZyW3Rneh0jZSse2r1TD4uaBTIPoUWmpTm0Fh/s1920/BANNER-COL.jpg');
-  background-size: cover;
+  background-size: 120%;
   background-attachment: fixed;
   background-position: left bottom;
 }

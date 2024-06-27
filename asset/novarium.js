@@ -135,7 +135,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
     window.addEventListener('scroll', function() {
       let offset = window.scrollY;
-      headArea.style.backgroundPositionY = offset * 0.5 + 'px';
+      headArea.style.backgroundPositionY = offset * -0.005 + 'px';
     });
 });
   
