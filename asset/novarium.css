@@ -599,7 +599,7 @@ input:checked + .burger-menu::before {
   min-height: 100%;
   object-fit: cover;
   transform: translateY(0);
-  background-position: center;
+  background-position: left center;
   background-size: cover;
 }
 .parallax-container .parallax-img.par-header {
