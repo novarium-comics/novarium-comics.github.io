@@ -1,0 +1,16 @@
+{
+  "name": "novarium-comics.github.io",
+  "version": "1.0.0",
+  "description": "A landing page for Novarium",
+  "main": "index.js",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@11ty/eleventy": "^3.0.0"
+  }
+}

@@ -1,0 +1,97 @@
+---
+layout: layouts.base.njk
+---
+<header id="head-area" class='parallax-container'>
+    <div class='parallax-img par-header'></div>
+    <h1>Novarium Comics</h1>
+</header>
+
+<main id="main-area">
+    <section class="home-section full-height" id="summary">
+        <div class="section-container-handler">
+            {% block pageSum %}
+                Summary
+            {% endblock pageSum %}
+        </div>
+    </section>
+
+    <section class="home-section" id="work">
+        <h2 class="section-heading full-height parallax-container">
+            <div class='parallax-img par-section'></div>
+            <span>Projects</span>
+        </h2>
+        <div class="section-container full-height">
+            <div class="section-container-handler"> 
+                {% block pageProj %}
+                    Project
+                {% endblock pageProj %}
+                <hr>
+                <h3>Recent Comics</h3>
+                <p>We have forged {{ collections.work | length }} comics</p>
+                <div id="work-gallery" class="gallery a-paper">
+                    <ul>
+                        {%- for work in collections.work -%}
+                            <li>
+                                <a target="_blank" title="{{ work.data.title }}" href="{{ work.url }}">
+                                    <div class="gallery-thumb">
+                                        <img src="{{ work.data.thumb.def }}" alt="{{ work.data.title }}">
+                                    </div>
+                                    <div class="caption">
+                                        <span class="cap-title">{{ work.data.title }}</span>
+                                        <span class="cap-subtitle">{{ work.data.published.year }}</span>
+                                    </div>
+                                </a>
+                            </li>
+                        {%- endfor -%}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="home-section" id="about">
+        <h2 class="section-heading full-height parallax-container">
+            <div class='parallax-img par-section'></div>
+            <span>About Us</span>
+        </h2>
+        <div class="section-container full-height">
+            <div class="section-container-handler">
+                {% block pageAbt %}
+                    About
+                {% endblock pageAbt %}
+                <hr>
+                <h3>The Stars</h3>
+                <p>Let us meet the stars behind the nebula.</p>
+                <div id="star-gallery" class="gallery square">
+                    <ul>
+                        {%- for star in data.stars -%}
+                            <li>
+                                <a title="The Star" target="_blank" rel="nofollow" href="{{ star.link }}">
+                                    <div class="gallery-thumb">
+                                        <img src="{{ star.img }}" alt="{{ star.name }}">
+                                    </div>
+                                    <div class="caption">
+                                        <span class="cap-title">{{ star.name }}</span>
+                                        <span class="cap-subtitle">{{ star.position }}</span>
+                                    </div>
+                                </a>
+                            </li>
+                        {%- endfor -%}
+                    </ul>
+                </div>
+                <h3>Get In Touch With Us</h3>
+                <div class="button-group row">
+                    <ul>
+                        {%- for soc in data.site.socmed -%}
+                        <li>
+                            <a target="_blank" href="{{ soc.link }}">
+                                <img src="{{ soc.img }}" alt="{{ soc.name }} icon">
+                                {{ soc.name }}
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>

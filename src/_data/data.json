@@ -1,0 +1,56 @@
+{
+    "site": {
+        "title": "Novarium Comics",
+        "desc": "desc",
+        "key": "key1, key2",
+        "featuredImg": "img.jpg",
+        "socmed": [
+            {
+                "name": "Email",
+                "link": "mailto:novarium.comics@gmail.com",
+                "img": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhhZfZ1Lk53HfkhJnpxaojWOiRoO_5bkoOlKL6TpCg82qMFYlRrOHxlzFzto2TwZoSj92uTX81EmNeiPN5-E8dXq-2t_MwaJ1b1-eIDmM_c1LzN5C7uaMCvLRvd6MuKBgUoOrF4_2wjwuHjrBxxIrmakp0iFqYNtpa_tn4IZgSbi8vk3xtCoDcSTqpUzsaA/s40/message.png"
+            },
+            {
+                "name": "Facebook",
+                "link": "https://fb.com/novarium.comics",
+                "img": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg3kftiukj___IraHw4LSvhxl9ddB-tAMl-LFQ5FzfLPaPB3K7fMGGFXhR-gVLsXzSXPFGhenFj6bCYm0F0Avg_xqIcIw8_hCdzBFMKUiuMZSP3S-3bvg5nQmrCKXEb5NRddKHAxWLAljrJQZ-LgCv7-w9zEhSCim7ZrJgpuB_UDmsbW4CtvJDG6aWSVdns/s40/facebook.png"
+            },
+            {
+                "name": "Instagram",
+                "link": "https://instagr.am/novarium.comics",
+                "img": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiDt8gF7PNoGzfXdWO1BD1pWFD_bSLK882YMYl-905pcFkXli82s1V2HWagsN5xBG0b11wuIWAY9ZAfT4GtLD8THkODQPEFPEHzvLwgBAc2GUQT6_1M76ZRRXaXZZyDrH_jrT7qYcT1e3EI593By7l7HUV-nXDpYH-CFXZURFIG88B6a4kVmSIhhhApjo9F/s40/instagram.png"
+            },
+            {
+                "name": "YouTube",
+                "link": "https://youtube.com/@novarium.comics",
+                "img": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgTBRVH4AnoUTKmSUyLvkwb3yD5AsjsZOxyqlIxEodoAHGvjlKYtCJi7wwIX-Gg1GNPzr5daGpvazT6AZ7wd2RGYiQRleAqOe5-TZMG-9MOFLQzGKj9FnugdMAEUNzjPapai4vcT93A9moKPO33mlYE_0f7RyReIxa1LcZo_04oGx0kM81Fa2Qtc9z1wClv/s40/youtube.png"
+            }
+        ]
+    },
+    "stars": [
+        {
+            "name": "Hadiyas Hanafi",
+            "link": "https://",
+            "position": "head",
+            "img": "img.jpg"
+        },
+        {
+            "name": "Benish0ga",
+            "link": "https://",
+            "position": "founder",
+            "img": "img.jpg"
+        },
+        {
+            "name": "Budkalon",
+            "link": "https://budkalon.crd.co",
+            "position": "founder",
+            "img": "img.jpg"
+        },
+        {
+            "name": "Crabocalypse",
+            "link": "https://budkalon.crd.co",
+            "position": "founder",
+            "img": "img.jpg"
+        }
+    ]
+}

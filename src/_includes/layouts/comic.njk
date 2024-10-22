@@ -1,0 +1,143 @@
+---
+layout: layouts/base.njk
+---
+{% include "parts/header.njk" %}
+
+<main itemscope itemtype="https://schema.org/Book" id="main-area">
+    <section id="comic-video">
+        {% if videoLink %}
+            <a data-youtube href="{{ videoLink }}">
+                Watch the comic trailer
+            </a>
+            {% else %}
+                <img src="{{ thumb.vid }}" title="{{ title }}" />
+        {% endif %}
+    </section>
+    
+
+    <section id="comic-description">
+        <h1 itemprop="name" id="comic-title">{{ title }}</h1>
+        <p>
+            <meta itemprop="isFamilyFriendly" content="{{ meta.familyFriendly }}"/>
+            <meta itemprop="bookFormat" content="GraphicNovel"/>
+            <span itemprop="copyrightYear" class="comic-year">{{ date.published }}</span>
+            <span class="comic-type">{{ comicType }}</span>
+            <span class="comic-page"><span itemprop="numberOfPages">{{ pages }}</span> pages</span>
+            <span itemprop="contentRating" class="comic-rating">{{ rating }}</span>
+            <span class="comic-lang"><meta itemprop="inLanguage" content="id"/>{{ language }}</span>
+        </p>
+    </section>
+
+    <section id="comic-work">
+        <div id="comic-thumb" class="left">
+            <div id="comic-cover">
+                <img itemprop="thumbnail" src="{{ thumb.def }}" />
+            </div>
+            <ul id="comic-tag">
+                {% for genre in genre %}
+                    <li itemprop="genre">
+                        {{ genre }}
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div id="comic-summary" class="right">
+            <div itemprop="description" id="comic-synopsis">
+                <p>
+                    {{ synopsis }}
+                </p>
+                <hr/>
+                <p>
+                    {{ content | safe }}
+                </p>
+            </div>
+            <div id="comic-author">
+                <h3>Titles</h3>
+                <meta itemprop="publisher" content="Novarium Comics"/>
+                <ol itemscope itemtype="https://schema.org/Chapter" id="comic-chapter">
+                    {% for chap in chapter %}
+                        {% if comicType == 'compilation' %}
+                            <li>
+                                <strong itempprop="name">{{ chap.title }}</strong> by <span itemprop="author">{{ chap.author }}</span>
+                            </li>
+                        {% else %}
+                            <li>
+                                <strong itempprop="name">{{ chap.title }}</strong>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                </ol>
+            </div>
+            <div id="comic-link">
+                <h3>Order</h3>
+                <div class="button-group row">
+                    <ul>
+                        {% for link in outLinks %}
+                            <li>
+                                <a target="_blank" rel="nofollow" href="{{ link.href }}" title="{{ link.title }}">
+                                    <span>
+                                        {{ link.title }}
+                                    </span>
+                                    <span class="material-symbols-outlined">
+                                        {{ link.icon }}
+                                    </span>
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="comic-preview">
+        <h3>Preview</h3>
+        <div id="page-gallery" class="gallery a-paper lightbox">
+            <ul>
+                {% for gal in gallery %}
+                    <li>
+                        <div class="gallery-thumb">
+                            <img data-fullres="{{ gal.img.full }}" itemprop="exampleOfWork" src="{{ gal.img.def }}" alt="{{ gal.alt }}">
+                        </div>
+                        <div class="caption">
+                            <span class="cap-title">{{ gal.title }}</span>
+                            <span class="cap-subtitle">{{ gal.cap }}</span>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </section>
+
+    <section id="comic-navigation">
+        <div class="button-group col">
+            <ul>
+                {% if nav.next %}
+                    <li>
+                        <a href="{{ nav.next.url }}">
+                            <span>
+                                {{ nav.next.title }}
+                            </span>
+                            <span class="material-symbols-outlined">
+                                chevron_right
+                            </span>
+                        </a>
+                    </li>
+                {% endif %}
+                {% if nav.prev %}
+                <li>
+                    <a href="{{ nav.next.url }}">
+                        <span>
+                            {{ nav.next.title }}
+                        </span>
+                        <span class="material-symbols-outlined">
+                            chevron_left
+                        </span>
+                    </a>
+                </li>
+                {% endif %}
+            </ul>
+        </div>
+    </section>
+
+</main>
