@@ -3,9 +3,7 @@ tags: work
 title: 
 videoLink: 
 familyFriendly: false
-date:
-  created: 
-  published: 
+date: 
 comicComp: 
 comicType: 
 pages: 

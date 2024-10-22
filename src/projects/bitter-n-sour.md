@@ -3,9 +3,7 @@ tags: work
 title: Bitter n Sour
 videoLink: false
 familyFriendly: false
-date:
-  created: 2023-10-27
-  published: 2023-10-27
+date: 2023-10-27
 comicComp: single
 comicType: oneshot
 pages: 12

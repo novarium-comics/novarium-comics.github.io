@@ -20,7 +20,7 @@ layout: layouts/base.njk
         <p>
             <meta itemprop="isFamilyFriendly" content="{{ meta.familyFriendly }}"/>
             <meta itemprop="bookFormat" content="GraphicNovel"/>
-            <span itemprop="copyrightYear" class="comic-year">{{ dates }}</span>
+            <span itemprop="copyrightYear" class="comic-year">{{ date.published }}</span>
             <span class="comic-type">{{ comicType }}</span>
             <span class="comic-page"><span itemprop="numberOfPages">{{ pages }}</span> pages</span>
             <span itemprop="contentRating" class="comic-rating">{{ rating }}</span>

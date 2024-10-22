@@ -1,21 +1,106 @@
 ---
-title: Novarium Comics
-preOrder: false
+layout: layouts/home.njk
 ---
-{% extends "layouts/home.njk" %}
-
-{% block pageSum %}
+<main id="main-area">
+    <section class="home-section full-height" id="summary">
+        <div class="section-container-handler">
+            {% block pageSum %}
     <h2 class="subtitle">We are the singularity who forged the co<em class="acn1">(s)</em>mic nebula</h2>
     <p>We&apos;re an Indonesian comic studio with a passion for creating cosmic stories that try to bring young-adult story with our own constellation. At Novarium, we aim to share our visions on the global stage, inviting you to explore original tales that span from Medieval intrigue to the vastness of space.</p>
-{% endblock pageSum %}
+{% endblock %}
+            
+        </div>
+    </section>
 
-{% block pageProj %}
+    <section class="home-section" id="work">
+        <h2 class="section-heading full-height parallax-container">
+            <div class='parallax-img par-section'></div>
+            <span>Projects</span>
+        </h2>
+        <div class="section-container full-height">
+            <div class="section-container-handler"> 
+                
+                {% block pageProj %}
     <p>Our focus is on creating constellations of stories, art, and characters that stand out. Each project has its own theme and narrative that connects deeply with our audience.</p>
     <p>Our <em>Big Bang</em> started by our first comic, "Demon Pepito." Since then, we've forged two comics across nine titles. In 2025, we're excited to launch a new project that showcases our growth and pushes the boundaries of imagination.</p>
-{% endblock pageProj %}
-
-{% block pageAbt %}
+{% endblock %}
+                
+                <hr>
+                <h3>Recent Comics</h3>
+                <p>We have forged {{ collections.work | length }} comics</p>
+                <div id="work-gallery" class="gallery a-paper">
+                    <ul>
+                        {%- for work in collections.work -%}
+                            <li>
+                                <a target="_blank" title="{{ work.data.title }}" href="{{ work.url }}">
+                                    <div class="gallery-thumb">
+                                        <img src="{{ work.data.thumb.def }}" alt="{{ work.data.title }}">
+                                    </div>
+                                    <div class="caption">
+                                        <span class="cap-title">{{ work.data.title }}</span>
+                                        <span class="cap-subtitle">{{ work.data.published.year }}</span>
+                                    </div>
+                                </a>
+                            </li>
+                        {%- endfor -%}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="home-section" id="about">
+        <h2 class="section-heading full-height parallax-container">
+            <div class='parallax-img par-section'></div>
+            <span>About Us</span>
+        </h2>
+        <div class="section-container full-height">
+            <div class="section-container-handler">
+                
+                {% block pageAbt %}
     <p>Novarium's journey began at a comic conference in 2022. Inspired by the event, we had a new vision: to create a compilation comic. And so, our journey began.</p>
     <p>Starting from scratch, we built Novarium's foundation with the Demon Pepito circle, laying the groundwork for our artistic adventure. Our first project was a compilation comic with a Medieval theme.</p>
     <p>Seeing the community's enthusiasm for our comics, we decided to keep going. We evolved under a new name. It wasn't an end but a new beginning; we emerged as Novarium, ready to continue creating our universe.</p>
-{% endblock pageAbt %}
+{% endblock %}
+                
+                <hr>
+                <h3>The Stars</h3>
+                <p>Let us meet the stars behind the nebula.</p>
+                <div id="star-gallery" class="gallery square">
+                    <ul>
+                        {% for star in data.stars %}
+                            <li>
+                                <a title="The Star" target="_blank" rel="nofollow" href="{{ star.link }}">
+                                    <div class="gallery-thumb">
+                                        <img src="{{ star.img }}" alt="{{ star.name }}">
+                                    </div>
+                                    <div class="caption">
+                                        <span class="cap-title">{{ star.name }}</span>
+                                        <span class="cap-subtitle">{{ star.position }}</span>
+                                    </div>
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <h3>Get In Touch With Us</h3>
+                <div class="button-group row">
+                    <ul>
+                        {% for soc in data.site.socmed %}
+                        <li>
+                            <a target="_blank" href="{{ soc.link }}">
+                                <img src="{{ soc.img }}" alt="{{ soc.name }} icon">
+                                {{ soc.name }}
+                            </a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+
+
+

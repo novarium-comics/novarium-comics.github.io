@@ -1,6 +1,3 @@
----
-permalink: '{{ page.fileSlug }}.txt'
----
 User-agent: *
 Disallow: /404
 
